@@ -1,38 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #f6f6f6;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 1% 10% 5%;
   min-height: 100vh;
+  width: 75vw;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  min-height: 90px;
+}
+.navbar-links-container {
+  display: flex;
+  list-style: none;
+}
+.navbar-links-container li {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #3b3d3e;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.main-text-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.main-text-section .hero-image {
+  grid-column: 2;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.main-text-section .hero-text {
+  grid-column: 1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.primary-button {
+  padding: 0.9rem 1.75rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}  */

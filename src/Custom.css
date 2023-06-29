@@ -1,0 +1,240 @@
+.custom-bg {
+  background-color: #f6f6f6;
+}
+/* .nav-container {
+  border: 1px solid red;
+} */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+
+  width: 100%;
+}
+#navbar {
+  position: fixed;
+
+  overflow: hidden;
+}
+.navbar-logo-container {
+  /* border: 1px solid red; */
+  margin-left: 10%;
+}
+.span-text {
+  color: #6c63ff;
+}
+.menu-items {
+  margin-right: 10%;
+  /* border: 1px solid red; */
+}
+.primary-cta {
+  display: inline-block;
+  border: 2px solid #6c63ff;
+}
+
+.main-text-section {
+  border: 1px solid red;
+  /* justify-content: center; */
+  margin-left: 10%;
+  margin-right: 10%;
+  /* text-align: center; */
+}
+.login-page {
+  /* border: 1px solid red; */
+  /* width: 40%; */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  /* padding-bottom: 4rem; */
+}
+
+.login-form {
+  padding: 4rem 8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.login-form h1 {
+  font-size: 1.8rem;
+  color: #232e3a;
+}
+/* .login-form {
+  padding: 3rem;
+} */
+.login-form input {
+  border: 0.03px solid #a2acb1;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.login-form input:hover {
+  outline: none; /* Remove default focus outline */
+  border-color: #4f46e5; /* Apply desired border color */
+  box-shadow: 0 0 4px rgba(79, 70, 229, 0.4); /* Apply desired box shadow */
+}
+
+.signup-form {
+  /* border: 1px solid red; */
+  padding: 3rem 8rem 1rem;
+}
+.menu-items > li {
+  margin-right: 1.5rem;
+  padding: 5px;
+  color: #3b3d3e;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 8px;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.secondary-button {
+  padding: 10px;
+  background-color: #6c63ff;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  /* font-weight: 600; */
+  color: white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-paragraph {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: #6c63ff;
+}
+
+.login-form-paragraph .forgot-password-text {
+  margin-bottom: 3rem;
+}
+
+.sidebar {
+  /* background-color: #6c63ff; */
+  width: 250px;
+  /* display: fixed; */
+  margin-top: 90px;
+  height: calc(100vh - 90px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
+}
+.sidebar-list {
+  height: auto;
+  width: 100%;
+  padding: 0;
+  font-size: 1.2rem;
+}
+.sidebar-list-row {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+}
+.sidebar-list-row:hover {
+  cursor: pointer;
+  background-color: #6c63ff;
+  opacity: 0.7;
+  /* border: 2px solid #4f46e5; */
+}
+#sidebar-icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+#sidebar-title {
+  flex: 70%;
+  color: #4e5050;
+}
+#active {
+  /* background-color: #6c63ff; */
+  border: 1px solid #6c63ff;
+}
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+}
+.dashboard-content-wrapper {
+  display: flex;
+  flex: 1;
+}
+.dashboard-content {
+  margin-top: 90px;
+  margin-left: 250px;
+
+  /* border: 1px solid black; */
+  flex: 1;
+  padding-left: 8rem;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+}
+.dashboard-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b3d3e;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.dashboard-content img {
+  width: 50%;
+}
+.create-link-btn {
+  padding: 0.9rem 1.75rem;
+  background-color: #6c63ff;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+#dashboard-form {
+  /* border: 1px solid black; */
+  box-shadow: none;
+  margin-top: 30px;
+  width: 70%;
+}
+#dashboard-form input {
+  outline: none;
+}
+#dashboard-form button {
+  width: 100%;
+  margin-top: 10px;
+}
+#short-url {
+  border: 1px solid black;
+  width: 500px;
+  margin-left: 8rem;
+  display: none;
+  /* text-align: center; */
+}
+#del-account {
+  background-color: rgb(218, 109, 109);
+}
