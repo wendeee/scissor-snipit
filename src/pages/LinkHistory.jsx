@@ -10,20 +10,18 @@ const LinkHistory = () => {
   // eslint-disable-next-line
   const [responseMessage, setResponseMessage] = useState("");
   const navigate = useNavigate();
+  const baseURL = `https://snipit.onrender.com`;
   useEffect(() => {
     const fetchData = async () => {
       const token = Cookies.get("jwtToken");
       try {
-        const response = await fetch(
-          "http://localhost:3001/api/v1/url/history",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await fetch(`${baseURL}/api/v1/url/history`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         if (!response.ok) {
           // Handle server error response
@@ -46,7 +44,7 @@ const LinkHistory = () => {
       } catch (err) {}
     };
     fetchData();
-  }, [navigate]);
+  }, [navigate, baseURL]);
   return (
     <div className="dashboard-container">
       <NavBar isLoggedIn={true} />

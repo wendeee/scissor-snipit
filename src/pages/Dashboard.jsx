@@ -16,6 +16,7 @@ const Dashboard = () => {
   const [data, setData] = useState([]);
   const [urlDetails, setUrlDetails] = useState([]);
   const navigate = useNavigate();
+  const baseURL = `https://snipit.onrender.com`;
   //make API call
   useEffect(() => {
     const fetchData = async () => {
@@ -29,16 +30,13 @@ const Dashboard = () => {
           navigate("/dashboard/history");
         }
 
-        const response = await fetch(
-          "http://localhost:3001/api/v1/url/history",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await fetch(`${baseURL}/api/v1/url/history`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         if (!response.ok) {
           // Handle server error response
@@ -62,7 +60,7 @@ const Dashboard = () => {
       } catch (err) {}
     };
     fetchData();
-  }, [navigate, isButtonClicked, isSeeAllButtonClicked]);
+  }, [navigate, isButtonClicked, isSeeAllButtonClicked, baseURL]);
 
   const handleCreateLinkClick = () => {
     setIsButtonClicked(true);

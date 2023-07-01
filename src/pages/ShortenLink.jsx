@@ -10,6 +10,7 @@ const ShortenLink = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
+  const baseURL = `https://snipit.onrender.com`;
 
   useEffect(() => {
     if (isButtonClicked) {
@@ -17,7 +18,7 @@ const ShortenLink = () => {
         setIsLoading(true);
         const token = Cookies.get("jwtToken");
         try {
-          const response = await fetch("http://localhost:3001/api/v1/url", {
+          const response = await fetch(`${baseURL}/api/v1/url`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -55,7 +56,7 @@ const ShortenLink = () => {
       };
       createShortURL();
     }
-  }, [longURL, customName, isButtonClicked]);
+  }, [longURL, customName, isButtonClicked, baseURL]);
 
   //Handle click event and data update
   const handleLongURLChange = (event) => {

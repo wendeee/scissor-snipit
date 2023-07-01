@@ -15,9 +15,11 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  //eslint-disable-next-line
   const [responseMessage, setResponseMessage] = useState("");
 
   const navigate = useNavigate();
+  const baseURL = `https://snipit.onrender.com`;
 
   //setUseEffect here
 
@@ -27,16 +29,13 @@ const Signup = () => {
         setIsLoading(true); // Set loading state to true
 
         try {
-          const response = await fetch(
-            "http://localhost:3001/api/v1/auth/signup",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name, email, password, confirmPassword }),
-            }
-          );
+          const response = await fetch(`${baseURL}/api/v1/auth/signup`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, password, confirmPassword }),
+          });
 
           if (!response.ok) {
             const errorResponse = await response.json();
@@ -45,37 +44,27 @@ const Signup = () => {
             const data = await response.json();
 
             console.log("DATA: ", data);
-            // const expirationTime = new Date();
-            // expirationTime.setTime(expirationTime.getTime() + 60 * 60 * 1000); // Set expiration time to 1 hour from now
-            // Cookies.set("jwtToken", token, { expires: expirationTime });
 
             navigate("/login");
           }
-
-          //   if (data.status === 200) {
-          //     //set cookies
-          //     // const { token } = data.data.jwtToken;
-          //     // console.log(data.data.modifiedResponse.firstName);
-          //     // const { firstName } = data.data.modifiedResponse.firstName;
-          //     // console.log("TOKEN:", token);
-          //     const expirationTime = new Date();
-          //     expirationTime.setTime(expirationTime.getTime() + 60 * 60 * 1000); // Set expiration time to 1 hour from now
-          //     // Cookies.set("jwtToken", token, { expires: expirationTime });
-
-          //     // navigate("/dashboard", { state: { firstName } });
-          //   } else {
-          //     console.log(data);
-          //   }
         } catch (error) {
           console.log(error);
         }
 
-        setIsLoading(false); // Set loading state to false after request completion
+        setIsLoading(false);
       };
 
       fetchData();
     }
-  }, [name, email, password, confirmPassword, navigate, isButtonClicked]);
+  }, [
+    name,
+    email,
+    password,
+    confirmPassword,
+    navigate,
+    isButtonClicked,
+    baseURL,
+  ]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);

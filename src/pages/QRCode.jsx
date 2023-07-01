@@ -13,6 +13,7 @@ const QRCode = () => {
   const [qrCodeUrl, setQrCodeUrl] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const baseURL = `https://snipit.onrender.com`;
 
   useEffect(() => {
     if (isButtonClicked) {
@@ -20,17 +21,14 @@ const QRCode = () => {
         setIsLoading(true);
         const token = Cookies.get("jwtToken");
         try {
-          const response = await fetch(
-            "http://localhost:3001/api/v1/url/qrcode",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-              },
-              body: JSON.stringify({ shortURL }),
-            }
-          );
+          const response = await fetch(`${baseURL}/api/v1/url/qrcode`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ shortURL }),
+          });
 
           if (!response.ok) {
             // Handle server error response
@@ -61,7 +59,7 @@ const QRCode = () => {
       };
       createQRCode();
     }
-  }, [shortURL, isButtonClicked, navigate]);
+  }, [shortURL, isButtonClicked, navigate, baseURL]);
 
   const handleShortURLChange = (event) => {
     setShortURL(event.target.value);

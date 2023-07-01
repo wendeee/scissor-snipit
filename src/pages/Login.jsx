@@ -15,6 +15,7 @@ const Login = () => {
   const [responseMessage, setResponseMessage] = useState("");
 
   const navigate = useNavigate();
+  const baseURL = `https://snipit.onrender.com`;
 
   //setUseEffect here
 
@@ -24,16 +25,13 @@ const Login = () => {
         setIsLoading(true);
 
         try {
-          const response = await fetch(
-            "http://localhost:3001/api/v1/auth/login",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, password }),
-            }
-          );
+          const response = await fetch(`${baseURL}/api/v1/auth/login`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+          });
           if (!response.ok) {
             const errorResponse = await response.json();
             setResponseMessage(`Error: ${errorResponse.message}`);
@@ -57,7 +55,7 @@ const Login = () => {
 
       fetchData();
     }
-  }, [email, password, navigate, isButtonClicked]);
+  }, [email, password, navigate, isButtonClicked, baseURL]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
