@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
@@ -8,15 +7,14 @@ const Logout = () => {
 
   useEffect(() => {
     // Delete the jwtToken cookie
-    const jwtTokenCookie = Cookies.get("jwtToken");
-    // Cookies.remove("jwtToken");
-    console.log(jwtTokenCookie);
+
+    Cookies.remove("jwtToken");
 
     // Redirect the user to the login page
-    // navigate("/");
-  }, []);
+    navigate("/");
+  }, [navigate]);
 
-  //   return null;
+  return null;
 };
 
 export default Logout;

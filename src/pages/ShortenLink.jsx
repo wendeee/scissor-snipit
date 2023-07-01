@@ -38,9 +38,7 @@ const ShortenLink = () => {
             // Handle successful response
             const data = await response.json();
             console.log("DATA:", data);
-            setResponseMessage(
-              `Your generated link: ${data.data.customUrl.shortURL}`
-            );
+            setResponseMessage(`Your generated link: ${data.data.customUrl}`);
             // if (data.status === 200) {
             //   console.log("DATA:", data);
             //   setResponseMessage(
@@ -67,7 +65,8 @@ const ShortenLink = () => {
   const handleCustomNameChange = (event) => {
     setCustomName(event.target.value);
   };
-  const handleGenerateLink = () => {
+  const handleGenerateLink = (event) => {
+    event.preventDefault();
     setIsButtonClicked(true);
   };
   return (
@@ -82,6 +81,7 @@ const ShortenLink = () => {
               Destination URL:
               <input
                 type="text"
+                placeholder="http://example.com"
                 value={longURL}
                 onChange={handleLongURLChange}
               />

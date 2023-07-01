@@ -4,7 +4,7 @@ import SideBar from "../components/SideBar";
 const Settings = () => {
   return (
     <div className="dashboard-container">
-      <NavBar />
+      <NavBar isLoggedIn={true} />
       <div className="dashboard-content-wrapper">
         {" "}
         <SideBar />

@@ -6,11 +6,8 @@ const NavBar = ({ isLoggedIn }) => {
   //conditionally render the navbar
   const navBarClassName = isLoggedIn ? "navbar navbar-logged-in" : "navbar";
   return (
-    <nav>
-      <div
-        className={` ${navBarClassName} shadow-md fixed top-0 left-0 `}
-        id="navbar"
-      >
+    <nav className="nav-container z-40">
+      <div className={` ${navBarClassName}  `} id="navbar">
         <div className="navbar-logo-container">
           <h3 className="navbar-logo-txt text-2xl font-bold">
             <Link to="/">
@@ -32,24 +29,13 @@ const NavBar = ({ isLoggedIn }) => {
               <Link to="/login">LOG IN</Link>
             </li>
           )}
-          {/* <li className="">
-            <Link to="/about">ABOUT</Link>
-          </li> */}
 
-          {/* <li>
-            <Link to="/blog">BLOG</Link>
-          </li> */}
-          {/* <li>
-            <Link to="/login">LOG IN</Link>
-          </li> */}
           {!isLoggedIn && (
             <li className="primary-cta">
               <Link to="/signup">GET STARTED</Link>
             </li>
           )}
-          {/* <li className="primary-cta">
-            <Link to="/signup">GET STARTED</Link>
-          </li> */}
+
           {isLoggedIn && (
             <li>
               <Link to="/">LOG OUT</Link>

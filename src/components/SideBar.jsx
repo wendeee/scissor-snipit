@@ -12,7 +12,6 @@ const SideBar = () => {
               id={window.location.pathname === val.link ? "active" : ""}
               className="sidebar-list-row"
               key={key}
-              //   onClick={() => <Link to={val.link} />}
             >
               {" "}
               <Link to={val.link} className="sidebar-list-row">

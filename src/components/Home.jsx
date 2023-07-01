@@ -1,22 +1,42 @@
 import React from "react";
 import NavBar from "./NavBar";
 import heroimage from "../Asset/banner-image.png";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isButtonClicked) {
+      navigate("/login");
+    }
+  }, [navigate, isButtonClicked]);
+
+  const handleStartForFreeLinkClick = () => {
+    setIsButtonClicked(true);
+  };
   return (
     <div>
       <NavBar />
 
-      <div className="main-text-section mt-32 flex flex-col-reverse md:flex-row items-center">
-        <div className="hero-text  md:w-1/2 md:pr-8">
-          <h1>Shorten links using your own custom name.</h1>
+      <div className="main-text-section ">
+        <div className="hero-text  ">
+          <h1>Create customized short links from long urls.</h1>
           <p>
             Create, customize links, generates QRCodes and share with your
             audience.{" "}
           </p>
+          <button
+            className="secondary-button"
+            type="button"
+            onClick={handleStartForFreeLinkClick}
+          >
+            START FOR FREE
+          </button>
         </div>
-        <div className="hero-image col-span-1">
-          <img src={heroimage} alt="" className="w-1/2 h-auto" />
+        <div className="hero-image ">
+          <img src={heroimage} alt="" className="" />
         </div>
       </div>
     </div>
