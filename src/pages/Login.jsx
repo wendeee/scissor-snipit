@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Cookies from "js-cookie";
@@ -119,7 +119,7 @@ const Login = () => {
               <a href="/forgot-password">Forgot Password?</a>
             </p>
             <p className="signup-text">
-              <a href="/signup">Don't have an account? Sign up</a>
+              <Link to="/signup">Don't have an account? Sign up</Link>
             </p>
           </div>
         </form>

@@ -4,7 +4,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
 // import NavBar from "../components/NavBar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -190,7 +190,7 @@ const Signup = () => {
           </button>
           <div className="login-form-paragraph">
             <p className="signup-text">
-              <a href="/login">Already have an account? Log in</a>
+              <Link to="/login">Already have an account? Log in</Link>
             </p>
           </div>
         </form>
