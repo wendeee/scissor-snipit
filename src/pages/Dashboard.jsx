@@ -98,7 +98,7 @@ const Dashboard = () => {
               count={data.QRCodeCount}
               photoName={AnalyticsIcon}
             />
-            <Card name="CLICK RATE" count="10%" photoName={AnalyticsIcon} />
+            <Card name="CLICK RATE" count="0.5%" photoName={AnalyticsIcon} />
           </div>
 
           {/* URL DETAILS COMPONENT */}

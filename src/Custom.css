@@ -22,7 +22,6 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  /* z-index: 9999; */
   left: 0;
 }
 
@@ -197,7 +196,8 @@
   color: #4e5050;
 }
 #active {
-  border: 1px solid #6c63ff;
+  background-color: #6c63ff;
+  color: #f2f2f2;
 }
 .dashboard-container {
   width: 90%;
@@ -324,6 +324,23 @@
   width: 200px;
   height: 200px;
   margin-bottom: 20px;
+}
+.modal .shortlink-modal-text-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3b3d3e;
+  padding-bottom: 18px;
+}
+
+.modal .shortlink-modal-text {
+  padding-bottom: 14px;
+}
+
+.modal .shortlink-btn {
+  background-color: #6c63ff;
+  color: #f2f2f2;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
 }
 .card {
   background-color: #ffffff;

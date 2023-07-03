@@ -29,7 +29,7 @@ export const SideBarData = [
   {
     title: "Settings",
     icon: <SettingsOutlinedIcon />,
-    link: "/dashboard",
+    link: "/dashboard/#",
   },
 ];
 
