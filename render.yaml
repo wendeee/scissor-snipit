@@ -1,6 +1,10 @@
-static_sites:
+services:
   - name: "scissor-snipit"
-    public_dir: /
-    redirects:
-      - from: "/*"
-        to: "/index.html"
+    buildCommand: npm run build
+    staticPublishPath: build
+    routes:
+      - src: /.*
+        headers:
+          - key: Cache-Control
+            value: no-store, must-revalidate
+        spa: true
